@@ -24,7 +24,7 @@ import { Payslip } from './payslip/payslip.entity';
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
         entities: [User, Payslip],
-        synchronize: true,
+        synchronize: false,
       }),
       inject: [ConfigService],
     }),
