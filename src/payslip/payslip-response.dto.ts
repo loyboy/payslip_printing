@@ -1,0 +1,29 @@
+export class PayslipDto {
+    id: number;
+    paye_name: string | null;
+    paye_title: string | null;
+    paye_service_no: string | null;
+    paye_bank: string | null;
+    pay_month: string | null;
+    pay_year: string | null;
+    paye_non_taxable: string | null;
+    paye_non_taxable_loan: string | null;
+    paye_consolidated_pay: string | null;
+    paye_consolidated_pay_loan: string | null;
+    paye_deductions: string | null;
+    paye_deductions_loan: string | null;
+    paye_national_housing_fund: string | null;
+    paye_national_housing_fund_loan: string | null;
+    paye_nn_cooperative: string | null;
+    paye_nn_cooperative_loan: string | null;
+    paye_tax: string | null;
+    paye_tax_loan: string | null;
+    paye_ippis_total: string | null;
+    paye_non_taxable_payment: string | null;
+    paye_diving_allowance: string | null;
+    paye_personal_allowance: string | null;
+    paye_rent_subsidy: string | null;
+    paye_scare_skill: string | null;
+    paye_other_payments: string | null;
+    paye_net_payment: string | null;
+}

@@ -1,0 +1,37 @@
+###
+
+POST http://127.0.0.1:3000/api/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "myadmin@gmail.com",
+    "password": "mypass"
+}
+
+###
+POST http://127.0.0.1:3000/auth/register HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "andy",
+    "lastName": "freeborn",
+    "password": "mypass",
+    "email": "myadmin@gmail.com"
+}
+
+#Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzIzMWY1OWQ2OTdlZTk0NTgyYTZhY2M3NTAzODQ5NThlMjIyNDIxNmFkMjEzMGEyMzgzZGNlOTcwZmQ4MDRmYjJjYjgyMjY5OTk0ZTRhNDciLCJpYXQiOjE3MDY3MTcwNjYuMjQzOTkyLCJuYmYiOjE3MDY3MTcwNjYuMjQzOTk3LCJleHAiOjE3MDY3MTcxODQuNzUyMDgsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.LbNiOneUd22JPQRPKMGqUtdU1xJBMdq1dNlTWZQ6CuBcETRsFxfK5L399VAjDeNvjmaxveSqCu1CSZukxE0nLd_ztaaBDwWu6Hl0OJHWK-aop278z0WhqS6hiOrjJH27y7Zj3OIRkjSqRchdxhKza-Lcm9eaeFHB_Q57uWrgfGl1Mbf-pbfFiun4UUXZZIxG2ndpvjgN39yTI5Wl2x7jfso_-fO3Op2TqBijf4wL1e0gaBhUIQWqrlXfo28oEZp_SZd0vzf9jpgocUIryKJT6a6LzkMkCvtin4MbffkExQuJVufjz2jGMyGw4N2FbxDOpa1qiKvjXHkdTTq5IndVFBilDMHRGUMTrv2VxQL1A7-9MjvI0kjiBk_r4Lqt2YYZ0SxpsTh36vMd3ipECK43zM2BmGkRjt_RCQYCD0Fy_FdnKaa21Q5LphQ8MxpjBWZEgVtF8IQEUzBC8gxJ_eA-pu1Z17uRCrWEguiBHaBCJSmBV3mi6efMSZKv_x5_vGqebQ-p6OloHWsod0EeqGv61E9L-j8oX6_3AE-n5gId5pFAub5_etzu4x_0KgUVvniDvn92DeUrSjIaNKSi8B0H6wS9AV0EZHn83WDybvzfIzFKue_FBjA3JMvrBYw4uFm0QPdtjIRjnU0D56Eg68fRZHRnL5TUjEVakTg-FqOdOJM
+###
+GET http://127.0.0.1:3000/api/payslip HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im15YWRtaW5AZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTcyMTMzNjQ3OSwiZXhwIjoxNzIxMzQwMDc5fQ.wYNFG6bi_Mxk156GBpi_5NN_6b9DpwJ6rGlhhe96YmM
+
+
+###
+POST http://127.0.0.1:3000/api/payslip/findByYearAndMonth HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im15YWRtaW5AZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTcyMTMzNjQ3OSwiZXhwIjoxNzIxMzQwMDc5fQ.wYNFG6bi_Mxk156GBpi_5NN_6b9DpwJ6rGlhhe96YmM
+
+{
+    "month": "April",
+    "year": "2019"
+}
