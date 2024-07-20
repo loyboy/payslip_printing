@@ -1,85 +1,115 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn } from 'typeorm';
 
-@Entity('payslip')
+@Entity('py-payslip2')
 export class Payslip {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryColumn({ type: 'bigint' })
+  id: number;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_name: string;
+  @Column({ type: 'varchar', length: 6 })
+  pay_year: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_title: string;
+  @Column({ type: 'varchar', length: 10 })
+  pay_month: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_service_no: string;
+  @Column({ type: 'varchar', length: 50 })
+  BP: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_bank: string;
+  @Column({ type: 'varchar', length: 50 })
+  NUMB: string;
 
-    @Column({ type: 'varchar'})
-    pay_month: string;
+  @Column({ type: 'varchar', length: 50, nullable: true })
+  work_station: string;
 
-    @Column({ type: 'varchar'})
-    pay_year: string;
+  @Column({ type: 'varchar', length: 2, nullable: true })
+  bpc: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_non_taxable: string;
+  @Column({ type: 'varchar', length: 50, nullable: true })
+  bpa: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_non_taxable_loan: string;
+  @Column({ type: 'decimal', precision: 10, scale: 0 })
+  BPM: number;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_consolidated_pay: string;
+  @Column({ type: 'decimal', precision: 10, scale: 0 })
+  loan: number;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_consolidated_pay_loan: string;
+  @Column({ type: 'int' })
+  ltenor: number;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_deductions: string;
+  @Column({ type: 'decimal', precision: 10, scale: 0, nullable: true })
+  lbal: number;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_deductions_loan: string;
+  @Column({ type: 'int' })
+  lmth: number;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_national_housing_fund: string;
+  @Column({ type: 'varchar', length: 40 })
+  tpcoy: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_national_housing_fund_loan: string;
+  @Column({ type: 'varchar', length: 70, nullable: true })
+  tpaddr: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_nn_cooperative: string;
+  @Column({ type: 'varchar', length: 15 })
+  title: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_nn_cooperative_loan: string;
+  @Column({ type: 'varchar', length: 20 })
+  surname: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_tax: string;
+  @Column({ type: 'varchar', length: 40 })
+  othername: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_tax_loan: string;
+  @Column({ type: 'varchar', length: 20, nullable: true})
+  bankacnumber: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_ippis_total: string;
+  @Column({ type: 'varchar', length: 70, nullable: true})
+  bankname: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_non_taxable_payment: string;
+  @Column({ type: 'varchar', length: 4, nullable: true })
+  gradelevel: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_diving_allowance: string;
+  @Column({ type: 'varchar', length: 10 , nullable: true})
+  gradetype: string;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_personal_allowance: string;
+  @Column({ type: 'decimal', precision: 10, scale: 0 , nullable: true})
+  prvtaxtodate: number;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_rent_subsidy: string;
+  @Column({ type: 'decimal', precision: 10, scale: 0 , nullable: true})
+  taxtodate: number;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_scare_skill: string;
+  @Column({ type: 'decimal', precision: 10, scale: 0 , nullable: true})
+  grstodate: number;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_other_payments: string;
+  @Column({ type: 'decimal', precision: 10, scale: 0 , nullable: true})
+  freetodate: number;
 
-    @Column({ type: 'varchar', nullable: true })
-    paye_net_payment: string;
+  @Column({ type: 'decimal', precision: 10, scale: 0 , nullable: true})
+  txbltodate: number;
+
+  @Column({ type: 'decimal', precision: 10, scale: 0 , nullable: true})
+  currtax: number;
+
+  @Column({ type: 'decimal', precision: 10, scale: 0,  nullable: true })
+  netpay: number;
+
+  @Column({ type: 'varchar', length: 10 , nullable: true})
+  groupcode: string;
+
+  @Column({ type: 'varchar', length: 70, nullable: true })
+  factory: string;
+
+  @Column({ type: 'varchar', length: 70 , nullable: true})
+  location: string;
+
+  @Column({ type: 'varchar', length: 50 , nullable: true})
+  nsitf: string;
+
+  @Column({ type: 'varchar', length: 20 , nullable: true})
+  nsitfcode: string;
+
+  @Column({ type: 'varchar', length: 50 , nullable: true})
+  email: string;
+
+  @Column({ type: 'int' })
+  status: number;
+
+  @Column({ type: 'varchar', length: 2 })
+  payclass: string;
 }
