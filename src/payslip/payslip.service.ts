@@ -20,6 +20,7 @@ export class PayslipService {
     async findByYearAndMonth(payslip: PayslipRequestDto ): Promise<PayslipDto | {}> {
         const payslip_found = await this.payslipRepository.findOne({
             where: { 
+                NUMB: payslip.serviceno,
                 pay_year: Like(`%${payslip.year.toLowerCase()}%`),
                 pay_month: Like(`%${payslip.month.toLowerCase()}%`) 
             },
