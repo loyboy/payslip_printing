@@ -17,8 +17,8 @@ export class PayslipService {
         return payslips
     }
 
-    async findByYearAndMonth(payslip: PayslipRequestDto ): Promise<PayslipDto | {}> {
-        const payslip_found = await this.payslipRepository.findOne({
+    async findByYearAndMonth(payslip: PayslipRequestDto ): Promise<PayslipDto[] | []> {
+        const payslip_found = await this.payslipRepository.find({
             where: { 
                 NUMB: payslip.serviceno,
                 pay_year: Like(`%${payslip.year.toLowerCase()}%`),
@@ -27,7 +27,7 @@ export class PayslipService {
         });
         if (!payslip_found) {
             // Handle case where no matching payslip is found
-            return {};
+            return [];
         }
         return payslip_found;
     }
