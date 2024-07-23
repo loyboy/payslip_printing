@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Repository, Like } from 'typeorm';
 import { Payslip } from './payslip.entity';
 import { PayslipDto } from './payslip-response.dto';
 import { PayslipRequestDto } from './payslip-request.dto';
@@ -19,7 +19,10 @@ export class PayslipService {
 
     async findByYearAndMonth(payslip: PayslipRequestDto ): Promise<PayslipDto | {}> {
         const payslip_found = await this.payslipRepository.findOne({
-            where: { pay_year: payslip.year, pay_month: payslip.month },
+            where: { 
+                pay_year: Like(`%${payslip.year.toLowerCase()}%`),
+                pay_month: Like(`%${payslip.month.toLowerCase()}%`) 
+            },
         });
         if (!payslip_found) {
             // Handle case where no matching payslip is found
